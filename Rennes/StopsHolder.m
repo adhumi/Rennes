@@ -60,20 +60,26 @@
 }
 
 - (NSArray<Stop *> *)closestStopsForCoordinates:(CLLocationCoordinate2D)coordinates {
-//	MKMapPoint point1 = MKMapPointForCoordinate(coordinates);
-//	
-//	NSMutableArray<Stop *> * closestStops = [NSMutableArray array];
-//	
-//	for (Stop *stop in self.stops) {
-//		MKMapPoint point2 = MKMapPointForCoordinate(stop.location);
-//		CLLocationDistance distance = MKMetersBetweenMapPoints(point1, point2);
-//
-//		if (distance < smallestDistance) {
-//			distance = smallestDistance;
-//			closestLocation = location;
-//		}
-//	}
-	return nil;
+	MKMapPoint originPoint = MKMapPointForCoordinate(coordinates);
+	
+	NSArray *sortedArray;
+	sortedArray = [self.stops sortedArrayUsingComparator:^NSComparisonResult(Stop *a, Stop *b) {
+		MKMapPoint pointA = MKMapPointForCoordinate(a.location);
+		MKMapPoint pointB = MKMapPointForCoordinate(b.location);
+		
+		CLLocationDistance distanceA = MKMetersBetweenMapPoints(originPoint, pointA);
+		CLLocationDistance distanceB = MKMetersBetweenMapPoints(originPoint, pointB);
+		
+		if (distanceA < distanceB) {
+			return NSOrderedAscending;
+		} else if (distanceA == distanceB) {
+			return NSOrderedSame;
+		} else {
+			return NSOrderedDescending;
+		}
+	}];
+	
+	return [sortedArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)]];
 }
 
 @end

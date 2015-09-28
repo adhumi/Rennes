@@ -84,6 +84,8 @@
 	CLLocation *location = locations.lastObject;
 	
 	[self.mapView setRegion:MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.005, 0.005)) animated:YES];
+	NSArray<Stop *> *stops = [[StopsHolder instance] closestStopsForCoordinates:location.coordinate];
+	
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
