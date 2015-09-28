@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0BA51DDC3EBF80BFA1014C41 /* Pods_Rennes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF44437F725C6BCBB0083C4C /* Pods_Rennes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		597794B1139DE7C3000D46DC /* Pods_RennesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE13F5D2BCB59C40D903100 /* Pods_RennesTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		5E51A5ED2E8B5E620B83680B /* Pods_RennesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBCF83691D568DE42CE93D8 /* Pods_RennesUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A68DEA421BB9E4EB00C2F140 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */; };
+		A68DEA461BB9EF6900C2F140 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A68DEA451BB9EF6900C2F140 /* default.gpx */; settings = {ASSET_TAGS = (); }; };
 		A6E1A6961BB97220005C08DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6951BB97220005C08DF /* main.m */; };
 		A6E1A6991BB97220005C08DF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6981BB97220005C08DF /* AppDelegate.m */; };
 		A6E1A69C1BB97220005C08DF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A69B1BB97220005C08DF /* ViewController.m */; };
@@ -15,6 +20,12 @@
 		A6E1A6A41BB97220005C08DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A6A21BB97220005C08DF /* LaunchScreen.storyboard */; };
 		A6E1A6AF1BB97221005C08DF /* RennesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6AE1BB97221005C08DF /* RennesTests.m */; };
 		A6E1A6BA1BB97221005C08DF /* RennesUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6B91BB97221005C08DF /* RennesUITests.m */; };
+		A6E1A6CA1BB979F1005C08DF /* APIURLMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6C91BB979F1005C08DF /* APIURLMaker.m */; settings = {ASSET_TAGS = (); }; };
+		A6E1A6CE1BB97B91005C08DF /* Stop.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6CD1BB97B91005C08DF /* Stop.m */; settings = {ASSET_TAGS = (); }; };
+		A6E1A6D11BB98AAC005C08DF /* APIRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6D01BB98AAC005C08DF /* APIRequest.m */; settings = {ASSET_TAGS = (); }; };
+		A6E1A6D31BB9B489005C08DF /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6E1A6D21BB9B489005C08DF /* MapKit.framework */; };
+		A6E1A6D61BB9BA59005C08DF /* stops.csv in Resources */ = {isa = PBXBuildFile; fileRef = A6E1A6D51BB9BA59005C08DF /* stops.csv */; settings = {ASSET_TAGS = (); }; };
+		A6E1A6D91BB9BAC4005C08DF /* StopsHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6D81BB9BAC4005C08DF /* StopsHolder.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23CACE9B38D35C1094B0E3AE /* Pods-RennesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RennesTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RennesTests/Pods-RennesTests.release.xcconfig"; sourceTree = "<group>"; };
+		6F925CE976EDDCE7555D8640 /* Pods-Rennes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rennes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rennes/Pods-Rennes.debug.xcconfig"; sourceTree = "<group>"; };
+		7077B99BA1C0F70DE54F7931 /* Pods-RennesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RennesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RennesTests/Pods-RennesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9BE13F5D2BCB59C40D903100 /* Pods_RennesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RennesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F97C761505BE880F442BCA4 /* Pods-Rennes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rennes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rennes/Pods-Rennes.release.xcconfig"; sourceTree = "<group>"; };
+		A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A68DEA451BB9EF6900C2F140 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		A6E1A6911BB97220005C08DF /* Rennes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rennes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E1A6951BB97220005C08DF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A6E1A6971BB97220005C08DF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +69,20 @@
 		A6E1A6B51BB97221005C08DF /* RennesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RennesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E1A6B91BB97221005C08DF /* RennesUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RennesUITests.m; sourceTree = "<group>"; };
 		A6E1A6BB1BB97221005C08DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6E1A6C81BB979F1005C08DF /* APIURLMaker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIURLMaker.h; sourceTree = "<group>"; };
+		A6E1A6C91BB979F1005C08DF /* APIURLMaker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIURLMaker.m; sourceTree = "<group>"; };
+		A6E1A6CC1BB97B91005C08DF /* Stop.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stop.h; sourceTree = "<group>"; usesTabs = 1; };
+		A6E1A6CD1BB97B91005C08DF /* Stop.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stop.m; sourceTree = "<group>"; };
+		A6E1A6CF1BB98AAC005C08DF /* APIRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIRequest.h; sourceTree = "<group>"; usesTabs = 1; };
+		A6E1A6D01BB98AAC005C08DF /* APIRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIRequest.m; sourceTree = "<group>"; };
+		A6E1A6D21BB9B489005C08DF /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A6E1A6D51BB9BA59005C08DF /* stops.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stops.csv; sourceTree = "<group>"; };
+		A6E1A6D71BB9BAC4005C08DF /* StopsHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopsHolder.h; sourceTree = "<group>"; };
+		A6E1A6D81BB9BAC4005C08DF /* StopsHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopsHolder.m; sourceTree = "<group>"; };
+		C470AF349BE43F38CBD88364 /* Pods-RennesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RennesUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RennesUITests/Pods-RennesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CFBCF83691D568DE42CE93D8 /* Pods_RennesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RennesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D11D24EDCA009655645C186D /* Pods-RennesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RennesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RennesUITests/Pods-RennesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FF44437F725C6BCBB0083C4C /* Pods_Rennes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rennes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A68DEA421BB9E4EB00C2F140 /* CoreLocation.framework in Frameworks */,
+				A6E1A6D31BB9B489005C08DF /* MapKit.framework in Frameworks */,
+				0BA51DDC3EBF80BFA1014C41 /* Pods_Rennes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597794B1139DE7C3000D46DC /* Pods_RennesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,19 +108,48 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E51A5ED2E8B5E620B83680B /* Pods_RennesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1227E7E050D607906352671E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */,
+				A6E1A6D21BB9B489005C08DF /* MapKit.framework */,
+				FF44437F725C6BCBB0083C4C /* Pods_Rennes.framework */,
+				9BE13F5D2BCB59C40D903100 /* Pods_RennesTests.framework */,
+				CFBCF83691D568DE42CE93D8 /* Pods_RennesUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		36C96ACDE5E9355653941551 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6F925CE976EDDCE7555D8640 /* Pods-Rennes.debug.xcconfig */,
+				9F97C761505BE880F442BCA4 /* Pods-Rennes.release.xcconfig */,
+				7077B99BA1C0F70DE54F7931 /* Pods-RennesTests.debug.xcconfig */,
+				23CACE9B38D35C1094B0E3AE /* Pods-RennesTests.release.xcconfig */,
+				D11D24EDCA009655645C186D /* Pods-RennesUITests.debug.xcconfig */,
+				C470AF349BE43F38CBD88364 /* Pods-RennesUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A6E1A6881BB97220005C08DF = {
 			isa = PBXGroup;
 			children = (
+				A6E1A6D41BB9BA48005C08DF /* Resources */,
 				A6E1A6931BB97220005C08DF /* Rennes */,
 				A6E1A6AD1BB97221005C08DF /* RennesTests */,
 				A6E1A6B81BB97221005C08DF /* RennesUITests */,
 				A6E1A6921BB97220005C08DF /* Products */,
+				36C96ACDE5E9355653941551 /* Pods */,
+				1227E7E050D607906352671E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +166,8 @@
 		A6E1A6931BB97220005C08DF /* Rennes */ = {
 			isa = PBXGroup;
 			children = (
+				A6E1A6CB1BB97B84005C08DF /* Models */,
+				A6E1A6C71BB979C1005C08DF /* Network */,
 				A6E1A6971BB97220005C08DF /* AppDelegate.h */,
 				A6E1A6981BB97220005C08DF /* AppDelegate.m */,
 				A6E1A69A1BB97220005C08DF /* ViewController.h */,
@@ -140,6 +207,37 @@
 			path = RennesUITests;
 			sourceTree = "<group>";
 		};
+		A6E1A6C71BB979C1005C08DF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1A6C81BB979F1005C08DF /* APIURLMaker.h */,
+				A6E1A6C91BB979F1005C08DF /* APIURLMaker.m */,
+				A6E1A6CF1BB98AAC005C08DF /* APIRequest.h */,
+				A6E1A6D01BB98AAC005C08DF /* APIRequest.m */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		A6E1A6CB1BB97B84005C08DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A6E1A6D71BB9BAC4005C08DF /* StopsHolder.h */,
+				A6E1A6D81BB9BAC4005C08DF /* StopsHolder.m */,
+				A6E1A6CC1BB97B91005C08DF /* Stop.h */,
+				A6E1A6CD1BB97B91005C08DF /* Stop.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		A6E1A6D41BB9BA48005C08DF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A68DEA451BB9EF6900C2F140 /* default.gpx */,
+				A6E1A6D51BB9BA59005C08DF /* stops.csv */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +245,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6E1A6BE1BB97221005C08DF /* Build configuration list for PBXNativeTarget "Rennes" */;
 			buildPhases = (
+				8524CECAD08816DDA7B64083 /* Check Pods Manifest.lock */,
 				A6E1A68D1BB97220005C08DF /* Sources */,
 				A6E1A68E1BB97220005C08DF /* Frameworks */,
 				A6E1A68F1BB97220005C08DF /* Resources */,
+				44BED1FD8252846296E8B542 /* Copy Pods Resources */,
+				7F21F3B69B04C8F71923760C /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,9 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6E1A6C11BB97221005C08DF /* Build configuration list for PBXNativeTarget "RennesTests" */;
 			buildPhases = (
+				2FDB3E3612ADDC3F079E5962 /* Check Pods Manifest.lock */,
 				A6E1A6A61BB97221005C08DF /* Sources */,
 				A6E1A6A71BB97221005C08DF /* Frameworks */,
 				A6E1A6A81BB97221005C08DF /* Resources */,
+				2FB1BBCC2CD8C45E9A3C535E /* Copy Pods Resources */,
+				465A09089662ADA21FB881FF /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -182,9 +286,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6E1A6C41BB97221005C08DF /* Build configuration list for PBXNativeTarget "RennesUITests" */;
 			buildPhases = (
+				8FC6034E99CD635E85BBA1F0 /* Check Pods Manifest.lock */,
 				A6E1A6B11BB97221005C08DF /* Sources */,
 				A6E1A6B21BB97221005C08DF /* Frameworks */,
 				A6E1A6B31BB97221005C08DF /* Resources */,
+				E89DBE581CE21F99CB62CE49 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +313,7 @@
 				TargetAttributes = {
 					A6E1A6901BB97220005C08DF = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = E873B24XVN;
 					};
 					A6E1A6A91BB97221005C08DF = {
 						CreatedOnToolsVersion = 7.0;
@@ -243,9 +350,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E1A6D61BB9BA59005C08DF /* stops.csv in Resources */,
 				A6E1A6A41BB97220005C08DF /* LaunchScreen.storyboard in Resources */,
 				A6E1A6A11BB97220005C08DF /* Assets.xcassets in Resources */,
 				A6E1A69F1BB97220005C08DF /* Main.storyboard in Resources */,
+				A68DEA461BB9EF6900C2F140 /* default.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,13 +374,140 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2FB1BBCC2CD8C45E9A3C535E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RennesTests/Pods-RennesTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2FDB3E3612ADDC3F079E5962 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		44BED1FD8252846296E8B542 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rennes/Pods-Rennes-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		465A09089662ADA21FB881FF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RennesTests/Pods-RennesTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F21F3B69B04C8F71923760C /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rennes/Pods-Rennes-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8524CECAD08816DDA7B64083 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8FC6034E99CD635E85BBA1F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E89DBE581CE21F99CB62CE49 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RennesUITests/Pods-RennesUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A6E1A68D1BB97220005C08DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E1A6CE1BB97B91005C08DF /* Stop.m in Sources */,
 				A6E1A69C1BB97220005C08DF /* ViewController.m in Sources */,
+				A6E1A6D11BB98AAC005C08DF /* APIRequest.m in Sources */,
+				A6E1A6CA1BB979F1005C08DF /* APIURLMaker.m in Sources */,
 				A6E1A6991BB97220005C08DF /* AppDelegate.m in Sources */,
+				A6E1A6D91BB9BAC4005C08DF /* StopsHolder.m in Sources */,
 				A6E1A6961BB97220005C08DF /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,28 +647,35 @@
 		};
 		A6E1A6BF1BB97221005C08DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6F925CE976EDDCE7555D8640 /* Pods-Rennes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Rennes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.adhumi.Rennes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		A6E1A6C01BB97221005C08DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F97C761505BE880F442BCA4 /* Pods-Rennes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Rennes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = fr.adhumi.Rennes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 		A6E1A6C21BB97221005C08DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7077B99BA1C0F70DE54F7931 /* Pods-RennesTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RennesTests/Info.plist;
@@ -445,6 +688,7 @@
 		};
 		A6E1A6C31BB97221005C08DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23CACE9B38D35C1094B0E3AE /* Pods-RennesTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = RennesTests/Info.plist;
@@ -457,6 +701,7 @@
 		};
 		A6E1A6C51BB97221005C08DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D11D24EDCA009655645C186D /* Pods-RennesUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RennesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -469,6 +714,7 @@
 		};
 		A6E1A6C61BB97221005C08DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C470AF349BE43F38CBD88364 /* Pods-RennesUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = RennesUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -498,6 +744,7 @@
 				A6E1A6C01BB97221005C08DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6E1A6C11BB97221005C08DF /* Build configuration list for PBXNativeTarget "RennesTests" */ = {
 			isa = XCConfigurationList;
@@ -506,6 +753,7 @@
 				A6E1A6C31BB97221005C08DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6E1A6C41BB97221005C08DF /* Build configuration list for PBXNativeTarget "RennesUITests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +762,7 @@
 				A6E1A6C61BB97221005C08DF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
