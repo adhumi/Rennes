@@ -12,7 +12,8 @@
 #import "ViewController.h"
 #import "APIRequest.h"
 #import "StopsHolder.h"
-
+#import "UIImage+BusLineLogo.h"
+#import "TableHeaderView.h"
 
 
 @interface ViewController ()<CLLocationManagerDelegate, UITableViewDelegate, UITableViewDataSource>
@@ -71,6 +72,10 @@
 	return self.stops.count;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 60.f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DepartureCell" forIndexPath:indexPath];
 	
@@ -79,8 +84,22 @@
 	
 	cell.textLabel.text = departure.headsign;
 	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d min", (int)remainingTime / 60];
+	cell.imageView.image = [UIImage busLogoForNumber:departure.line];
 	
 	return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+	return 25.f;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+	TableHeaderView *customView = [[[NSBundle mainBundle] loadNibNamed:@"TableHeaderView" owner:self options:nil] objectAtIndex:0];
+	customView.title.text = self.stops[section].stopName;
+	customView.subtitle.text = self.stops[section].stopDescription;
+	customView.pitco.image = self.stops[section].wheelchairBoarding ? [UIImage imageNamed:@"wheelchair"] : nil;
+	
+	return customView;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
@@ -88,15 +107,12 @@
 }
 
 - (Departure *)departureForIndexPath:(NSIndexPath *)indexPath {
+	// TODO: optimize this
+	
 	Stop *stop = self.stops[indexPath.section];
 	
 	int i = 0;
 	for (StopLine *stopLine in stop.stopLines) {
-//		if (i + stopLine.departures.count < indexPath.row) {
-//			return stopLine.departures[indexPath.row - i];
-//		}
-//		
-//		i += stopLine.departures.count;
 		for (Departure *departure in stopLine.departures) {
 			if (i == indexPath.row) {
 				return departure;

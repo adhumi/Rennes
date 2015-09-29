@@ -10,10 +10,11 @@
 
 @implementation Departure
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary stopId:(NSString *)stopId {
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary stopId:(NSString *)stopId line:(NSInteger)line {
 	self = [super init];
 	if (self) {
 		self.stopId = stopId;
+		self.line = line;
 		
 		self.accurate = [dictionary[@"_accurate"] integerValue];
 		self.headsign = dictionary[@"_headsign"];

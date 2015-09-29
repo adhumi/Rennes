@@ -45,15 +45,25 @@
 		
 		NSDictionary *dictionary = [NSDictionary dictionaryWithXMLParser:responseObject];
 		
-		NSArray *stopsDepartures = [dictionary valueForKeyPath:@"answer.data.stopline"];
+		id stopsDepartures = [dictionary valueForKeyPath:@"answer.data.stopline"];
 		
-		for (NSDictionary *dic in stopsDepartures) {
-			StopLine *stopline = [[StopLine alloc] initWithDictionary:dic];
-			Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
-			
-			[stop.stopLines addObject:stopline];
-			[nearbyStops addObject:stop];
+		if ([stopsDepartures isKindOfClass:[NSArray class]]) {
+			for (NSDictionary *dic in stopsDepartures) {
+				StopLine *stopline = [[StopLine alloc] initWithDictionary:dic];
+				Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
+				
+				[stop.stopLines addObject:stopline];
+				[nearbyStops addObject:stop];
+			}
 		}
+		if ([stopsDepartures isKindOfClass:[NSDictionary class]]) {
+				StopLine *stopline = [[StopLine alloc] initWithDictionary:stopsDepartures];
+				Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
+				
+				[stop.stopLines addObject:stopline];
+				[nearbyStops addObject:stop];
+		}
+		
 		
 		if (weakSelf.completionBlock) {
 			weakSelf.completionBlock([NSArray arrayWithArray:nearbyStops], nil);

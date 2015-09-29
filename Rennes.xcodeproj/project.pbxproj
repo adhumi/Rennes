@@ -12,6 +12,9 @@
 		5E51A5ED2E8B5E620B83680B /* Pods_RennesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBCF83691D568DE42CE93D8 /* Pods_RennesUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		A621641B1BBB2E75000B7AF2 /* StopLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A621641A1BBB2E75000B7AF2 /* StopLine.m */; settings = {ASSET_TAGS = (); }; };
 		A621641E1BBB2EA4000B7AF2 /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = A621641D1BBB2EA4000B7AF2 /* Departure.m */; settings = {ASSET_TAGS = (); }; };
+		A62164221BBB441E000B7AF2 /* UIImage+BusLineLogo.m in Sources */ = {isa = PBXBuildFile; fileRef = A62164211BBB441E000B7AF2 /* UIImage+BusLineLogo.m */; settings = {ASSET_TAGS = (); }; };
+		A62164251BBB49B7000B7AF2 /* TableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = A62164241BBB49B7000B7AF2 /* TableHeaderView.m */; settings = {ASSET_TAGS = (); }; };
+		A62164271BBB4A8B000B7AF2 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62164261BBB4A8B000B7AF2 /* TableHeaderView.xib */; settings = {ASSET_TAGS = (); }; };
 		A68DEA421BB9E4EB00C2F140 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */; };
 		A68DEA461BB9EF6900C2F140 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A68DEA451BB9EF6900C2F140 /* default.gpx */; settings = {ASSET_TAGS = (); }; };
 		A6E1A6961BB97220005C08DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6951BB97220005C08DF /* main.m */; };
@@ -57,6 +60,11 @@
 		A621641A1BBB2E75000B7AF2 /* StopLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopLine.m; sourceTree = "<group>"; };
 		A621641C1BBB2EA4000B7AF2 /* Departure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Departure.h; sourceTree = "<group>"; };
 		A621641D1BBB2EA4000B7AF2 /* Departure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Departure.m; sourceTree = "<group>"; };
+		A62164201BBB441E000B7AF2 /* UIImage+BusLineLogo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+BusLineLogo.h"; sourceTree = "<group>"; };
+		A62164211BBB441E000B7AF2 /* UIImage+BusLineLogo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+BusLineLogo.m"; sourceTree = "<group>"; };
+		A62164231BBB49B7000B7AF2 /* TableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableHeaderView.h; sourceTree = "<group>"; };
+		A62164241BBB49B7000B7AF2 /* TableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableHeaderView.m; sourceTree = "<group>"; };
+		A62164261BBB4A8B000B7AF2 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 		A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A68DEA451BB9EF6900C2F140 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		A6E1A6911BB97220005C08DF /* Rennes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rennes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +154,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A621641F1BBB43FB000B7AF2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A62164201BBB441E000B7AF2 /* UIImage+BusLineLogo.h */,
+				A62164211BBB441E000B7AF2 /* UIImage+BusLineLogo.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		A6E1A6881BB97220005C08DF = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +189,7 @@
 		A6E1A6931BB97220005C08DF /* Rennes */ = {
 			isa = PBXGroup;
 			children = (
+				A621641F1BBB43FB000B7AF2 /* Utils */,
 				A6E1A6CB1BB97B84005C08DF /* Models */,
 				A6E1A6C71BB979C1005C08DF /* Network */,
 				A6E1A6971BB97220005C08DF /* AppDelegate.h */,
@@ -179,6 +197,9 @@
 				A6E1A69A1BB97220005C08DF /* ViewController.h */,
 				A6E1A69B1BB97220005C08DF /* ViewController.m */,
 				A6E1A69D1BB97220005C08DF /* Main.storyboard */,
+				A62164261BBB4A8B000B7AF2 /* TableHeaderView.xib */,
+				A62164231BBB49B7000B7AF2 /* TableHeaderView.h */,
+				A62164241BBB49B7000B7AF2 /* TableHeaderView.m */,
 				A6E1A6A21BB97220005C08DF /* LaunchScreen.storyboard */,
 				A6E1A6A51BB97220005C08DF /* Info.plist */,
 				A6E1A6941BB97220005C08DF /* Supporting Files */,
@@ -364,6 +385,7 @@
 				A6E1A6A41BB97220005C08DF /* LaunchScreen.storyboard in Resources */,
 				A6E1A6A11BB97220005C08DF /* Assets.xcassets in Resources */,
 				A6E1A69F1BB97220005C08DF /* Main.storyboard in Resources */,
+				A62164271BBB4A8B000B7AF2 /* TableHeaderView.xib in Resources */,
 				A68DEA461BB9EF6900C2F140 /* default.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -517,6 +539,8 @@
 				A6E1A69C1BB97220005C08DF /* ViewController.m in Sources */,
 				A6E1A6D11BB98AAC005C08DF /* APIRequest.m in Sources */,
 				A621641B1BBB2E75000B7AF2 /* StopLine.m in Sources */,
+				A62164221BBB441E000B7AF2 /* UIImage+BusLineLogo.m in Sources */,
+				A62164251BBB49B7000B7AF2 /* TableHeaderView.m in Sources */,
 				A6E1A6CA1BB979F1005C08DF /* APIURLMaker.m in Sources */,
 				A6E1A6991BB97220005C08DF /* AppDelegate.m in Sources */,
 				A6E1A6D91BB9BAC4005C08DF /* StopsHolder.m in Sources */,

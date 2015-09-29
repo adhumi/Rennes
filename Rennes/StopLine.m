@@ -23,13 +23,13 @@
 		
 		if ([departures isKindOfClass:[NSArray class]]) {
 			for (NSDictionary *dic in departures) {
-				Departure *departure = [[Departure alloc] initWithDictionary:dic stopId:self.stopId];
+				Departure *departure = [[Departure alloc] initWithDictionary:dic stopId:self.stopId line:self.route.integerValue];
 				[self.departures addObject:departure];
 			}
 		}
 		
 		if ([departures isKindOfClass:[NSDictionary class]]) {
-			Departure *departure = [[Departure alloc] initWithDictionary:departures stopId:self.stopId];
+			Departure *departure = [[Departure alloc] initWithDictionary:departures stopId:self.stopId line:self.route.integerValue];
 			[self.departures addObject:departure];
 		}
 		
