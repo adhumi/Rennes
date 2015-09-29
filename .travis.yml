@@ -3,5 +3,5 @@ xcode_workspace: Rennes.xcworkspace
 xcode_scheme: Rennes
 osx_image: xcode7
 xcode_sdk: iphoneos9.0
-script:
-  - xcodebuild [DEFAULT_OPTIONS] CODE_SIGNING_REQUIRED=NO
+script: xctool -project Rennes.xcworkspace -scheme Rennes build  CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+
