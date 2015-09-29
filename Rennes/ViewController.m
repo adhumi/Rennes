@@ -47,8 +47,6 @@
 	self.locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
 	[self.locationManager requestWhenInUseAuthorization];
 	[self.locationManager requestLocation];
-	
-	[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"reuseIdentifier"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -74,16 +72,41 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DepartureCell" forIndexPath:indexPath];
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"Sell %ld", (long)indexPath.row];
-	cell.detailTextLabel.text = @"toto";
+	Departure *departure = [self departureForIndexPath:indexPath];
+	NSTimeInterval remainingTime = [departure.expectedTime timeIntervalSinceDate:[NSDate date]];
+	
+	cell.textLabel.text = departure.headsign;
+	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d min", (int)remainingTime / 60];
 	
 	return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return self.stops[section].stopName;
+	return [NSString stringWithFormat:@"%@, %@", self.stops[section].stopName, self.stops[section].stopDescription];
+}
+
+- (Departure *)departureForIndexPath:(NSIndexPath *)indexPath {
+	Stop *stop = self.stops[indexPath.section];
+	
+	int i = 0;
+	for (StopLine *stopLine in stop.stopLines) {
+//		if (i + stopLine.departures.count < indexPath.row) {
+//			return stopLine.departures[indexPath.row - i];
+//		}
+//		
+//		i += stopLine.departures.count;
+		for (Departure *departure in stopLine.departures) {
+			if (i == indexPath.row) {
+				return departure;
+			}
+			
+			++i;
+		}
+	}
+	
+	return nil;
 }
 
 
@@ -107,6 +130,15 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			weakSelf.stops = stops;
 			[weakSelf.tableView reloadData];
+			
+			[weakSelf.mapView removeAnnotations:weakSelf.mapView.annotations];
+			
+			for (Stop *stop in stops) {
+				MKPointAnnotation *annotation = [[MKPointAnnotation alloc] init];
+				[annotation setCoordinate:stop.location];
+				[annotation setTitle:[NSString stringWithFormat:@"%@, %@", stop.stopName, stop.stopDescription]];
+				[weakSelf.mapView addAnnotation:annotation];
+			}
 		});
 	};
 	[self.request start];
