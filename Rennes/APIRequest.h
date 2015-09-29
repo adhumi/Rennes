@@ -15,6 +15,8 @@
 @property (nonatomic, strong, readonly) NSArray<Stop *>		*stops;
 @property (nonatomic, copy) void (^completionBlock)(NSArray<Stop *> *stops, NSError *error);
 
+@property (nonatomic, assign, getter=isRunning) BOOL		running;
+
 - (instancetype)initWithStops:(NSArray<Stop *> *)stops;
 - (void)start;
 

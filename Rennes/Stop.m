@@ -15,6 +15,8 @@
 	if (self) {
 		if (line.count < 11) { return nil; }
 		
+		self.stopLines = [NSMutableArray array];
+		
 		self.stopId = [line[0] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
 		self.stopCode = [line[1] stringByReplacingOccurrencesOfString:@"\"" withString:@""];
 		self.stopName = [line[2] stringByReplacingOccurrencesOfString:@"\"" withString:@""];

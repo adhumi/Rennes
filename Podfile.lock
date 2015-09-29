@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - CHCSVParser (2.1.0)
+  - XMLDictionary (1.4)
 
 DEPENDENCIES:
   - AFNetworking (= 2.6)
   - CHCSVParser (= 2.1)
+  - XMLDictionary (= 1.4)
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   CHCSVParser: 3bcc7bdb72111a31222e95d57eacceefe4e537e8
+  XMLDictionary: f9f51601ba76678b594ab485f2b00ec1fed23724
 
 COCOAPODS: 0.38.2

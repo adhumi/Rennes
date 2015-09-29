@@ -9,7 +9,8 @@
 #import "APIRequest.h"
 #import "APIURLMaker.h"
 #import "AFNetworking.h"
-
+#import "StopsHolder.h"
+#import "XMLDictionary.h"
 
 
 @interface APIRequest ()
@@ -32,25 +33,48 @@
 	return self;
 }
 
-- (void)start {
-	NSLog(@"%@", self.requestURL);
-	
+- (void)start {	
 	NSURLRequest *request = [NSURLRequest requestWithURL:self.requestURL];
 	
-	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-	operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
+	self.operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+	self.operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
 	
-	[operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSLog(@"XML: %@", responseObject);
+	__weak __typeof(self)weakSelf = self;
+	[self.operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+		NSMutableArray *nearbyStops = [NSMutableArray array];
+		
+		NSDictionary *dictionary = [NSDictionary dictionaryWithXMLParser:responseObject];
+		
+		NSArray *stopsDepartures = [dictionary valueForKeyPath:@"answer.data.stopline"];
+		
+		for (NSDictionary *dic in stopsDepartures) {
+			StopLine *stopline = [[StopLine alloc] initWithDictionary:dic];
+			Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
+			
+			[stop.stopLines addObject:stopline];
+			[nearbyStops addObject:stop];
+		}
+		
+		if (weakSelf.completionBlock) {
+			weakSelf.completionBlock([NSArray arrayWithArray:nearbyStops], nil);
+		}
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"Error: %@", error);
+		
+		if (weakSelf.completionBlock) {
+			weakSelf.completionBlock(nil, error);
+		}
 	}];
 	
-	[[NSOperationQueue mainQueue] addOperation:operation];
+	[[NSOperationQueue mainQueue] addOperation:self.operation];
 }
 
 - (NSURL *)requestURL {
 	return [APIURLMaker nextDeparturesForStops:self.stops];
+}
+
+- (BOOL)isRunning {
+	return self.operation.isExecuting;
 }
 
 @end

@@ -82,4 +82,12 @@
 	return [sortedArray objectsAtIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 5)]];
 }
 
+- (Stop *)stopForIdentifier:(NSString *)stopId {
+	NSInteger index = [self.stops indexOfObjectPassingTest:^BOOL(Stop * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		return [obj.stopId isEqualToString:stopId];
+	}];
+	
+	return self.stops[index];
+}
+
 @end

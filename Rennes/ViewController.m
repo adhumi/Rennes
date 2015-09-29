@@ -19,8 +19,12 @@
 
 @property (nonatomic, strong) CLLocationManager		*locationManager;
 
-@property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet MKMapView		*mapView;
+@property (weak, nonatomic) IBOutlet UITableView	*tableView;
+
+@property (nonatomic, strong) NSArray<Stop *>		*stops;
+
+@property (nonatomic, strong) APIRequest			*request;
 
 @end
 
@@ -57,23 +61,29 @@
 #pragma mark - UITableView DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	return 2;
+	int nbDepartures = 0;
+	for (StopLine *stopLine in self.stops[section].stopLines) {
+		nbDepartures += stopLine.departures.count;
+	}
+	
+	return nbDepartures;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-	return 5;
+	return self.stops.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
 	
 	cell.textLabel.text = [NSString stringWithFormat:@"Sell %ld", (long)indexPath.row];
+	cell.detailTextLabel.text = @"toto";
 	
 	return cell;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [NSString stringWithFormat:@"Section %ld", (long)section];
+	return self.stops[section].stopName;
 }
 
 
@@ -85,12 +95,21 @@
 	
 	[self.mapView setRegion:MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(0.005, 0.005)) animated:YES];
 	
+	if (self.request && self.request.isRunning) {
+		return;
+	}
+	
 	NSArray<Stop *> *stops = [[StopsHolder instance] closestStopsForCoordinates:location.coordinate];
-	APIRequest *request = [[APIRequest alloc] initWithStops:stops];
-	request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
-		
+	
+	__weak __typeof(self)weakSelf = self;
+	self.request = [[APIRequest alloc] initWithStops:stops];
+	self.request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			weakSelf.stops = stops;
+			[weakSelf.tableView reloadData];
+		});
 	};
-	[request start];
+	[self.request start];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

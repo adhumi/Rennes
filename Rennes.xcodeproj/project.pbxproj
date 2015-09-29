@@ -10,6 +10,8 @@
 		0BA51DDC3EBF80BFA1014C41 /* Pods_Rennes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF44437F725C6BCBB0083C4C /* Pods_Rennes.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		597794B1139DE7C3000D46DC /* Pods_RennesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9BE13F5D2BCB59C40D903100 /* Pods_RennesTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		5E51A5ED2E8B5E620B83680B /* Pods_RennesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFBCF83691D568DE42CE93D8 /* Pods_RennesUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A621641B1BBB2E75000B7AF2 /* StopLine.m in Sources */ = {isa = PBXBuildFile; fileRef = A621641A1BBB2E75000B7AF2 /* StopLine.m */; settings = {ASSET_TAGS = (); }; };
+		A621641E1BBB2EA4000B7AF2 /* Departure.m in Sources */ = {isa = PBXBuildFile; fileRef = A621641D1BBB2EA4000B7AF2 /* Departure.m */; settings = {ASSET_TAGS = (); }; };
 		A68DEA421BB9E4EB00C2F140 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */; };
 		A68DEA461BB9EF6900C2F140 /* default.gpx in Resources */ = {isa = PBXBuildFile; fileRef = A68DEA451BB9EF6900C2F140 /* default.gpx */; settings = {ASSET_TAGS = (); }; };
 		A6E1A6961BB97220005C08DF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6E1A6951BB97220005C08DF /* main.m */; };
@@ -51,6 +53,10 @@
 		7077B99BA1C0F70DE54F7931 /* Pods-RennesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RennesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RennesTests/Pods-RennesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9BE13F5D2BCB59C40D903100 /* Pods_RennesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RennesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F97C761505BE880F442BCA4 /* Pods-Rennes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rennes.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rennes/Pods-Rennes.release.xcconfig"; sourceTree = "<group>"; };
+		A62164191BBB2E75000B7AF2 /* StopLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopLine.h; sourceTree = "<group>"; };
+		A621641A1BBB2E75000B7AF2 /* StopLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopLine.m; sourceTree = "<group>"; };
+		A621641C1BBB2EA4000B7AF2 /* Departure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Departure.h; sourceTree = "<group>"; };
+		A621641D1BBB2EA4000B7AF2 /* Departure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Departure.m; sourceTree = "<group>"; };
 		A68DEA411BB9E4EB00C2F140 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A68DEA451BB9EF6900C2F140 /* default.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = default.gpx; sourceTree = "<group>"; };
 		A6E1A6911BB97220005C08DF /* Rennes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rennes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -224,6 +230,10 @@
 				A6E1A6D81BB9BAC4005C08DF /* StopsHolder.m */,
 				A6E1A6CC1BB97B91005C08DF /* Stop.h */,
 				A6E1A6CD1BB97B91005C08DF /* Stop.m */,
+				A62164191BBB2E75000B7AF2 /* StopLine.h */,
+				A621641A1BBB2E75000B7AF2 /* StopLine.m */,
+				A621641C1BBB2EA4000B7AF2 /* Departure.h */,
+				A621641D1BBB2EA4000B7AF2 /* Departure.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -503,8 +513,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6E1A6CE1BB97B91005C08DF /* Stop.m in Sources */,
+				A621641E1BBB2EA4000B7AF2 /* Departure.m in Sources */,
 				A6E1A69C1BB97220005C08DF /* ViewController.m in Sources */,
 				A6E1A6D11BB98AAC005C08DF /* APIRequest.m in Sources */,
+				A621641B1BBB2E75000B7AF2 /* StopLine.m in Sources */,
 				A6E1A6CA1BB979F1005C08DF /* APIURLMaker.m in Sources */,
 				A6E1A6991BB97220005C08DF /* AppDelegate.m in Sources */,
 				A6E1A6D91BB9BAC4005C08DF /* StopsHolder.m in Sources */,

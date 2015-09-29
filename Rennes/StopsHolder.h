@@ -20,5 +20,6 @@
 
 - (void)loadData;
 - (NSArray<Stop *> *)closestStopsForCoordinates:(CLLocationCoordinate2D)coordinates;
+- (Stop *)stopForIdentifier:(NSString *)stopId;
 
 @end
