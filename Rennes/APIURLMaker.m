@@ -16,6 +16,10 @@ static NSString *BASE_URL = @"http://data.keolis-rennes.com/xml";
 static NSString *API_KEY = @"UJLQKY6MHQVART6";
 
 + (NSURL *)nextDeparturesForStops:(NSArray<Stop *> *)stops {
+	return [NSURL URLWithString:@"http://192.168.0.21/test.xml"];
+	
+	
+	
     NSMutableString *urlString = [NSMutableString stringWithFormat:@"%@/?cmd=getbusnextdepartures&version=2.2&key=%@&param[mode]=stop", BASE_URL, API_KEY];
     
     for (Stop *stop in stops) {

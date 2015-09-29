@@ -52,16 +52,21 @@
 				StopLine *stopline = [[StopLine alloc] initWithDictionary:dic];
 				Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
 				
-				[stop.stopLines addObject:stopline];
+				if (![stop.stopLines containsObject:stopline]) {
+					[stop.stopLines addObject:stopline];
+				}
+				
 				[nearbyStops addObject:stop];
 			}
-		}
-		if ([stopsDepartures isKindOfClass:[NSDictionary class]]) {
-				StopLine *stopline = [[StopLine alloc] initWithDictionary:stopsDepartures];
-				Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
-				
+		} else if ([stopsDepartures isKindOfClass:[NSDictionary class]]) {
+			StopLine *stopline = [[StopLine alloc] initWithDictionary:stopsDepartures];
+			Stop *stop = [[StopsHolder instance] stopForIdentifier:stopline.stopId];
+			
+			if (![stop.stopLines containsObject:stopline]) {
 				[stop.stopLines addObject:stopline];
-				[nearbyStops addObject:stop];
+			}
+			
+			[nearbyStops addObject:stop];
 		}
 		
 		

@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
@@ -66,20 +65,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bfI-V6-fts" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="1c9-jq-H1S"/>
-                            <constraint firstItem="DNc-1A-GZP" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.4" id="5a1-N4-tcs"/>
+                            <constraint firstItem="bfI-V6-fts" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.6" id="21C-ZP-eXq"/>
                             <constraint firstItem="bfI-V6-fts" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="L3X-wz-ahX"/>
                             <constraint firstAttribute="trailing" secondItem="DNc-1A-GZP" secondAttribute="trailing" id="NYi-bS-hP2"/>
                             <constraint firstItem="DNc-1A-GZP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="NzA-dK-yIP"/>
                             <constraint firstItem="bfI-V6-fts" firstAttribute="top" secondItem="DNc-1A-GZP" secondAttribute="bottom" id="ZuI-0F-FHY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bfI-V6-fts" secondAttribute="trailing" id="eM2-em-FQ1"/>
                             <constraint firstAttribute="trailing" secondItem="bfI-V6-fts" secondAttribute="trailing" id="exC-An-yxN"/>
                             <constraint firstItem="DNc-1A-GZP" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="rED-EE-Aab"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="eM2-em-FQ1"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="DNc-1A-GZP" id="ogn-i2-zxt"/>

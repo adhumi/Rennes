@@ -83,7 +83,13 @@
 	NSTimeInterval remainingTime = [departure.expectedTime timeIntervalSinceDate:[NSDate date]];
 	
 	cell.textLabel.text = departure.headsign;
-	cell.detailTextLabel.text = [NSString stringWithFormat:@"%d min", (int)remainingTime / 60];
+	
+	if (remainingTime < 60) {
+		cell.detailTextLabel.text = @"Imminent";
+	} else {
+		cell.detailTextLabel.text = [NSString stringWithFormat:@"%d min", (int)remainingTime / 60];
+	}
+	
 	cell.imageView.image = [UIImage busLogoForNumber:departure.line];
 	
 	return cell;
@@ -100,10 +106,6 @@
 	customView.pitco.image = self.stops[section].wheelchairBoarding ? [UIImage imageNamed:@"wheelchair"] : nil;
 	
 	return customView;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	return [NSString stringWithFormat:@"%@, %@", self.stops[section].stopName, self.stops[section].stopDescription];
 }
 
 - (Departure *)departureForIndexPath:(NSIndexPath *)indexPath {
