@@ -1,6 +1,7 @@
 platform :ios, '8.0'
-use_frameworks!
 
+use_frameworks!
+inhibit_all_warnings!
 
 def available_pods
     pod 'AFNetworking', 2.6

@@ -60,7 +60,7 @@
 		A6E1A69A1BB97220005C08DF /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A6E1A69B1BB97220005C08DF /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		A6E1A69E1BB97220005C08DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A6E1A6A01BB97220005C08DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6E1A6A01BB97220005C08DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Rennes/Assets.xcassets; sourceTree = "<group>"; };
 		A6E1A6A31BB97220005C08DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A6E1A6A51BB97220005C08DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6E1A6AA1BB97221005C08DF /* RennesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RennesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,7 +173,6 @@
 				A6E1A69A1BB97220005C08DF /* ViewController.h */,
 				A6E1A69B1BB97220005C08DF /* ViewController.m */,
 				A6E1A69D1BB97220005C08DF /* Main.storyboard */,
-				A6E1A6A01BB97220005C08DF /* Assets.xcassets */,
 				A6E1A6A21BB97220005C08DF /* LaunchScreen.storyboard */,
 				A6E1A6A51BB97220005C08DF /* Info.plist */,
 				A6E1A6941BB97220005C08DF /* Supporting Files */,
@@ -232,6 +231,7 @@
 		A6E1A6D41BB9BA48005C08DF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A6E1A6A01BB97220005C08DF /* Assets.xcassets */,
 				A68DEA451BB9EF6900C2F140 /* default.gpx */,
 				A6E1A6D51BB9BA59005C08DF /* stops.csv */,
 			);

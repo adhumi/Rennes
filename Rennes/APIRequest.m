@@ -33,6 +33,8 @@
 }
 
 - (void)start {
+	NSLog(@"%@", self.requestURL);
+	
 	NSURLRequest *request = [NSURLRequest requestWithURL:self.requestURL];
 	
 	AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
