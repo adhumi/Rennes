@@ -6,10 +6,11 @@
 //  Copyright © 2015 adhumi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@import UIKit;
+
+
 
 @interface ViewController : UIViewController
-
 
 @end
 

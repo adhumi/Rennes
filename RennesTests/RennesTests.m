@@ -6,11 +6,23 @@
 //  Copyright © 2015 adhumi. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
+@import XCTest;
+
+#import "APIRequest.h"
+#import "APIURLMaker.h"
+#import "AFNetworking.h"
+#import "StopsHolder.h"
+#import "XMLDictionary.h"
+#import "UIImage+BusLineLogo.h"
+
 
 @interface RennesTests : XCTestCase
 
+@property (nonatomic, strong) APIRequest			*request;
+
 @end
+
+
 
 @implementation RennesTests
 
@@ -24,15 +36,30 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+- (void)testRequestValidity {
+	__block NSArray *initialStops = @[
+									  [[StopsHolder instance] stopForIdentifier:@"1010"],
+									  [[StopsHolder instance] stopForIdentifier:@"1011"],
+									  [[StopsHolder instance] stopForIdentifier:@"1012"],
+									  [[StopsHolder instance] stopForIdentifier:@"1014"],
+									  [[StopsHolder instance] stopForIdentifier:@"1015"],
+									  ];
+	
+	self.request = [[APIRequest alloc] initWithStops:initialStops];
+	self.request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-retain-cycles"
+		XCTAssertEqual(stops.count, initialStops.count);
+#pragma clang diagnostic pop
+		
+	};
+	[self.request start];
 }
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
+- (void)testCheckLineImage {
     [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+		UIImage *image = [UIImage busLogoForNumber:42];
+		XCTAssertNotNil(image);
     }];
 }
 
