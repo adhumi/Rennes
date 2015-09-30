@@ -11,7 +11,7 @@
 @implementation UIImage (BusLineLogo)
 
 + (UIImage *)busLogoForNumber:(NSInteger)number {
-	NSString *text = [NSString stringWithFormat:@"%ld", number];
+	NSString *text = [NSString stringWithFormat:@"%ld", (long)number];
 	
 	CGRect rect = CGRectMake(0.f, 0.f, 30.f, 60.f);
 	CGRect circleRect = CGRectMake(0.f, 15.f, 30.f, 30.f);

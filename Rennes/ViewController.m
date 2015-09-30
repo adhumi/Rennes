@@ -38,6 +38,9 @@
 	if (self) {
 		self.locationManager = [[CLLocationManager alloc] init];
 		self.locationManager.delegate = self;
+		
+		self.request = [[APIRequest alloc] init];
+
 	}
 	return self;
 }
@@ -143,8 +146,13 @@
 	NSArray<Stop *> *stops = [[StopsHolder instance] closestStopsForCoordinates:location.coordinate];
 	
 	__weak __typeof(self)weakSelf = self;
-	self.request = [[APIRequest alloc] initWithStops:stops];
+	self.request.stops = stops;
 	self.request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
+		if (error) {
+			[weakSelf presentViewController:[UIAlertController alertControllerWithTitle:@"Oups !" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert] animated:YES completion:nil];
+			return;
+		}
+		
 		dispatch_async(dispatch_get_main_queue(), ^{
 			weakSelf.stops = stops;
 			[weakSelf.tableView reloadData];

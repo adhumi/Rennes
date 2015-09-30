@@ -29,6 +29,6 @@
 
 @property (nonatomic, strong) NSMutableArray<StopLine *>	*stopLines;
 
-- (instancetype _Nullable)initWithCSVLine:(NSArray<NSString *> * _Nonnull)line;
+- (instancetype)initWithCSVLine:(NSArray<NSString *> *)line;
 
 @end

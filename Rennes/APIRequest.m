@@ -15,7 +15,6 @@
 
 @interface APIRequest ()
 
-@property (nonatomic, strong) NSArray<Stop *>			*stops;
 @property (nonatomic, strong, readonly) NSURL			*requestURL;
 @property (nonatomic, strong) AFHTTPRequestOperation	*operation;
 
@@ -25,14 +24,6 @@
 
 @implementation APIRequest
 
-- (instancetype)initWithStops:(NSArray<Stop *> *)stops {
-	self = [self init];
-	if (self) {
-		self.stops = stops;
-	}
-	return self;
-}
-
 - (void)start {	
 	NSURLRequest *request = [NSURLRequest requestWithURL:self.requestURL];
 	
@@ -41,7 +32,8 @@
 	
 	__weak __typeof(self)weakSelf = self;
 	[self.operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-		NSMutableArray *nearbyStops = [NSMutableArray array];
+		NSError *error;
+		NSMutableArray *stopsWithDepartures = [NSMutableArray array];
 		
 		NSDictionary *dictionary = [NSDictionary dictionaryWithXMLParser:responseObject];
 		
@@ -56,7 +48,9 @@
 					[stop.stopLines addObject:stopline];
 				}
 				
-				[nearbyStops addObject:stop];
+				if (![stopsWithDepartures containsObject:stop]) {
+					[stopsWithDepartures addObject:stop];
+				}
 			}
 		} else if ([stopsDepartures isKindOfClass:[NSDictionary class]]) {
 			StopLine *stopline = [[StopLine alloc] initWithDictionary:stopsDepartures];
@@ -66,12 +60,17 @@
 				[stop.stopLines addObject:stopline];
 			}
 			
-			[nearbyStops addObject:stop];
+			if (![stopsWithDepartures containsObject:stop]) {
+				[stopsWithDepartures addObject:stop];
+			}
 		}
 		
+		if (stopsWithDepartures.count == 0) {
+			error = [[NSError alloc] initWithDomain:@"fr.adhumi.Rennes.request" code:404 userInfo:@{NSLocalizedDescriptionKey: @"Pas de passage de bus à proximité prochainement."}];
+		}
 		
 		if (weakSelf.completionBlock) {
-			weakSelf.completionBlock([NSArray arrayWithArray:nearbyStops], nil);
+			weakSelf.completionBlock([NSArray arrayWithArray:stopsWithDepartures], error);
 		}
 	} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 		NSLog(@"Error: %@", error);

@@ -36,7 +36,7 @@
     [super tearDown];
 }
 
-- (void)testCheckRequest {
+- (void)testRequestValidity {
 	__block NSArray *initialStops = @[
 									  [[StopsHolder instance] stopForIdentifier:@"1010"],
 									  [[StopsHolder instance] stopForIdentifier:@"1011"],
@@ -47,7 +47,11 @@
 	
 	self.request = [[APIRequest alloc] initWithStops:initialStops];
 	self.request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-retain-cycles"
 		XCTAssertEqual(stops.count, initialStops.count);
+#pragma clang diagnostic pop
+		
 	};
 	[self.request start];
 }

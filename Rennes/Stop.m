@@ -36,4 +36,14 @@
 	return self;
 }
 
+- (BOOL)isEqual:(id)object {
+	if (![object isKindOfClass:[Stop class]]) {
+		return NO;
+	}
+	
+	Stop *castedObject = (Stop *)object;
+	
+	return [self.stopId isEqualToString:castedObject.stopId];
+}
+
 @end
