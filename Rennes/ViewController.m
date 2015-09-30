@@ -149,7 +149,9 @@
 	self.request.stops = stops;
 	self.request.completionBlock = ^void(NSArray<Stop *> *stops, NSError *error) {
 		if (error) {
-			[weakSelf presentViewController:[UIAlertController alertControllerWithTitle:@"Oups !" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert] animated:YES completion:nil];
+			dispatch_async(dispatch_get_main_queue(), ^{
+				[weakSelf presentViewController:[UIAlertController alertControllerWithTitle:@"Oups !" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert] animated:YES completion:nil];
+			});
 			return;
 		}
 		
