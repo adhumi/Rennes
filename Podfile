@@ -4,9 +4,9 @@ use_frameworks!
 inhibit_all_warnings!
 
 def available_pods
-    pod 'AFNetworking', 2.6
-	pod 'CHCSVParser', 2.1
-	pod 'XMLDictionary', 1.4
+    	pod 'AFNetworking', '~> 2.6'
+	pod 'CHCSVParser', '~> 2.1'
+	pod 'XMLDictionary', '~> 1.4'
 end
 
 
