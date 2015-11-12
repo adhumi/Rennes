@@ -2,3 +2,4 @@
 
 # Rennes
 
+Test project with Objective-C and the public transportation API of Rennes (Bretagne, France).
